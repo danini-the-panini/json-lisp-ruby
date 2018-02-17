@@ -24,15 +24,18 @@ Or install it yourself as:
 constants = {
   "a" => 5,
   "b" => 7,
-  "+" => -> (a, b) { a + b }
+  "+" => -> (a, b) { a + b },
+  "-" => -> (a, b) { a - b }
 }
 
 json_lisp_env = JSON::Lisp::Env.new(constants)
 
 json_lisp_env.evaluate(["+", "a", "b"])           #=> 12
-json_lisp_env.evaluate(["+", "a", 3])             #=> 8
+json_lisp_env.evaluate(["-", "a", 3])             #=> 2
 json_lisp_env.evaluate(["+", 2, "b"])             #=> 9
-json_lisp_env.evaluate(["+", "a", ["+", "b", 2]]) #=> 14
+json_lisp_env.evaluate(["+", "a", ["-", "b", 2]]) #=> 10
+
+json_lisp_env.evaluate_json('["+", "a", ["-", "b", 2]]') #=> 10
 ```
 
 ## Development

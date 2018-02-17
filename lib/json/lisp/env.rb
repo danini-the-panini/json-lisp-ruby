@@ -18,6 +18,10 @@ module JSON
           expression
         end
       end
+
+      def evaluate_json(json_string)
+        evaluate(JSON.parse(json_string))
+      end
     end
   end
 end
