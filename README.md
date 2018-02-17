@@ -40,6 +40,10 @@ json_lisp_env.evaluate(["+", "a", ["-", "b", 2]]) #=> 10
 json_lisp_env.evaluate_json('["+", "a", ["-", "b", 2]]') #=> 10
 ```
 
+## See Also
+
+1. [JSON Lisp for JavaScript](https://github.com/jellymann/json-lisp-js)
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake test` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
