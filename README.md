@@ -1,8 +1,6 @@
-# Json::Lisp
+# JSON::Lisp
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/json/lisp`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Execute lisp-like s-expressions written in JSON
 
 ## Installation
 
@@ -22,7 +20,20 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+constants = {
+  "a" => 5,
+  "b" => 7,
+  "+" => -> (a, b) { a + b }
+}
+
+json_lisp_env = JSON::Lisp.new(constants)
+
+json_lisp_env.evaluate(["+", "a", "b"])           #=> 12
+json_lisp_env.evaluate(["+", "a", 3])             #=> 8
+json_lisp_env.evaluate(["+", 2, "b"])             #=> 9
+json_lisp_env.evaluate(["+", "a", ["+", "b", 2]]) #=> 14
+```
 
 ## Development
 
@@ -32,7 +43,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/json-lisp.
+Bug reports and pull requests are welcome on GitHub at https://github.com/jellymann/json-lisp.
 
 ## License
 
