@@ -27,7 +27,7 @@ constants = {
   "+" => -> (a, b) { a + b }
 }
 
-json_lisp_env = JSON::Lisp.new(constants)
+json_lisp_env = JSON::Lisp::Env.new(constants)
 
 json_lisp_env.evaluate(["+", "a", "b"])           #=> 12
 json_lisp_env.evaluate(["+", "a", 3])             #=> 8

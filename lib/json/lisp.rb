@@ -1,7 +1,7 @@
 require "json/lisp/version"
+require "json/lisp/env"
 
 module JSON
   module Lisp
-    # Your code goes here...
   end
 end
