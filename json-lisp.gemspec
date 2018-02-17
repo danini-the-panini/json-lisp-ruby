@@ -10,6 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["jellymann@gmail.com"]
 
   spec.summary       = %q{Execute lisp-like s-expressions written in JSON}
+  spec.description   = %q{The aim of JSON-Lisp is to allow for an executable code format that is simple and portable, as well as easy to parse and execute in a controlled, sandboxed environment. This allows it to be stored in a database, sent over an HTTP connection, collected from user input, and executed on either a client or a server's machine.}
   spec.homepage      = "https://github.com/jellymann/json-lisp-ruby"
   spec.license       = "MIT"
 
